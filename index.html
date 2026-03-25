@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIARI - Centro Universitário</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Encode+Sans+Expanded:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="notification-container" class="notification-container"></div>
+
+    <div class="main-container">
+        <section class="login-side">
+            <div class="content-box">
+                <div class="logo-wrapper">
+                    <img src="Logo.png" alt="UNIARI" class="logo">
+                </div>
+
+                <div class="user-selector">
+                    <button class="tab active">Aluno</button>
+                    <button class="tab">Professor</button>
+                </div>
+
+                <form id="loginForm">
+                    <div class="input-container">
+                        <label>E-mail Institucional:</label>
+                        <input type="text" id="email" placeholder="usuario@fas.edu.br" autocomplete="email">
+                    </div>
+
+                    <div class="input-container">
+                        <label>Senha:</label>
+                        <input type="password" id="password" placeholder="Mínimo 12 dígitos">
+                    </div>
+
+                    <a href="#" class="forgot-pwd">Esqueci minha senha</a>
+
+                    <div class="actions">
+                        <button type="submit" class="btn-login">Entrar</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+        
+        <section class="gradient-side"></section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
