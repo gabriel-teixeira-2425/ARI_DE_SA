@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Encode Sans Expanded', sans-serif;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+}
+
+.main-container {
+    display: flex;
+    min-height: 100vh; /* Permite que a tela cresça se o conteúdo for maior que o visor */
+}
+
+/* Lado Esquerdo - Formulário */
+.login-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; /* Unidade relativa (root em) */
+}
+
+.content-box {
+    width: 100%;
+    max-width: 440px; 
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: clamp(20px, 5vh, 45px); /* Margem dinâmica conforme a altura da tela */
+}
+
+.logo {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+}
+
+/* Seletor de Usuário */
+.user-selector {
+    display: flex;
+    border: 1px solid #1e3c72;
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 2rem;
+    overflow: hidden;
+}
+
+.tab {
+    flex: 1;
+    padding: 12px 5px;
+    border: none;
+    font-weight: 700;
+    font-size: clamp(12px, 2vw, 14px);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.tab.active {
+    background: linear-gradient(to bottom, #1e3c72 0%, #11233d 100%);
+    color: white;
+}
+
+.tab:not(.active) {
+    background: #fff;
+    color: #1e3c72;
+}
+
+/* Inputs */
+.input-container {
+    margin-bottom: 1.5rem;
+}
+
+.input-container label {
+    display: block;
+    color: #1e3c72;
+    font-weight: 700;
+    font-size: 15px;
+    margin-bottom: 8px;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 14px;
+    border: 1.5px solid #1e3c72;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s;
+}
+
+.input-container input:focus {
+    border-color: #4691FD;
+    box-shadow: 0 0 0 3px rgba(70, 145, 253, 0.1);
+}
+
+.forgot-pwd {
+    display: inline-block;
+    color: #1e3c72;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    margin-bottom: 2rem;
+}
+
+/* Botão Entrar */
+.actions {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btn-login {
+    width: 100%;
+    max-width: 280px;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #25497d 0%, #183052 100%);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+    filter: brightness(1.2);
+    transform: translateY(-2px);
+}
+
+/* Lado Direito - Gradiente */
+.gradient-side {
+    flex: 1;
+    background: linear-gradient(135deg, 
+        #4691FD 0%, 
+        #3B6CB3 16%, 
+        #25497D 33%, 
+        #183052 63%, 
+        #0B1728 98%
+    );
+}
+
+/* MEDIA QUERIES - O CORAÇÃO DA RESPONSIVIDADE */
+
+/* Tablets e telas médias (até 1024px) */
+@media (max-width: 1024px) {
+    .content-box {
+        max-width: 380px;
+    }
+}
+
+/* Celulares e telas pequenas (até 850px) */
+@media (max-width: 850px) {
+    .main-container {
+        flex-direction: column; /* Empilha o conteúdo se necessário */
+    }
+    
+    .gradient-side {
+        display: none; /* Remove o gradiente lateral para focar no login */
+    }
+
+    .login-side {
+        width: 100%;
+        padding: 1.5rem;
+    }
+
+    .content-box {
+        max-width: 100%; /* Ocupa a largura disponível no mobile */
+    }
+}
+
+/* Ajuste para telas muito curtas (ex: celular em landscape) */
+@media (max-height: 600px) {
+    .login-side {
+        padding: 1rem;
+        align-items: flex-start; /* Permite scroll se a tela for muito baixa */
+    }
+    .logo-wrapper { margin-bottom: 20px; }
+}
